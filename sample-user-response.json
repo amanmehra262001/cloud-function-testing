@@ -1,0 +1,21 @@
+{
+    "objectId": "b9lbH3HHe0V3BVCTVBwhOxat",
+    "username": "QbDuHLPYiPOOE2Kd8EW1jocWv",
+    "authData": {
+        "moralisEth": {
+            "id": "0x8ce08069358cd6fe1541c2ea7bd0c5938f5ffca2",
+            "signature": "0x91a6a5becec25335956784143f79f9f8b13a7e29af3fb65d12309eff7f97267c7577538d6beba678725db73b78577ae41bb05af48776c5de0fcea396f0ec980d1c",
+            "data": "Moralis Authentication\n\nId: F4d7yaIPJIB6nFnk0VP9cVB1F6b1M85Gafbv4dLy:1661835380513"
+        }
+    },
+    "createdAt": "2022-08-18T13:37:31.366Z",
+    "updatedAt": "2022-08-29T14:24:19.462Z",
+    "accounts": ["0x8ce08069358cd6fe1541c2ea7bd0c5938f5ffca2"],
+    "ethAddress": "0x8ce08069358cd6fe1541c2ea7bd0c5938f5ffca2",
+    "email": "amanmehra262001@gmail.com",
+    "ACL": {
+        "b9lbH3HHe0V3BVCTVBwhOxat": { "read": true, "write": true },
+        "role:coreservices": { "read": true, "write": true }
+    },
+    "sessionToken": "r:f0ac9b3850eb8371bbe757a292fbc4bb"
+}

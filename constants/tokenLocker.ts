@@ -60,6 +60,21 @@ export const tokenLockerAbi = [
   {
     anonymous: false,
     inputs: [
+      { indexed: false, internalType: "address", name: "nft", type: "address" },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "tokenId",
+        type: "uint256",
+      },
+      { indexed: false, internalType: "address", name: "to", type: "address" },
+    ],
+    name: "NewNftRelease",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
       {
         indexed: true,
         internalType: "address",
@@ -155,6 +170,26 @@ export const tokenLockerAbi = [
     name: "addressZero",
     outputs: [{ internalType: "address", name: "", type: "address" }],
     stateMutability: "pure",
+    type: "function",
+  },
+  {
+    inputs: [
+      { internalType: "address", name: "_snft", type: "address" },
+      { internalType: "uint256", name: "_stokenId", type: "uint256" },
+    ],
+    name: "getHeldItems",
+    outputs: [
+      {
+        components: [
+          { internalType: "address", name: "nftAddress", type: "address" },
+          { internalType: "uint256", name: "tokenId", type: "uint256" },
+        ],
+        internalType: "struct BridgeSingleTokenLocker.Item",
+        name: "",
+        type: "tuple",
+      },
+    ],
+    stateMutability: "view",
     type: "function",
   },
   {
@@ -280,6 +315,17 @@ export const tokenLockerAbi = [
     name: "owner",
     outputs: [{ internalType: "address", name: "", type: "address" }],
     stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      { internalType: "address", name: "_nft", type: "address" },
+      { internalType: "uint256", name: "_tokenId", type: "uint256" },
+      { internalType: "address", name: "_to", type: "address" },
+    ],
+    name: "releaseNew",
+    outputs: [],
+    stateMutability: "nonpayable",
     type: "function",
   },
   {

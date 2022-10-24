@@ -10,14 +10,15 @@ const Home: NextPage = () => {
     useMoralis();
   axios.defaults.baseURL = process.env.NEXT_PUBLIC_API_URL_DEV;
   useEffect(() => {
-    if (!isAuthenticated) authenticate();
+    if (!isWeb3Enabled) enableWeb3();
     console.log(account);
   }, [account]);
   const [walletEthNfts, setWalletEthNfts] = useState<any>();
   const [walletPolyNfts, setWalletPolyNfts] = useState<any>();
   const [params, setParams] = useState<any>();
   const [selectedNftAddress, setSelectedNftAddress] = useState("");
-  const nftBridgeLocker = process.env.NEXT_PUBLIC_BRIDGE_SINGLE_TOKEN_LOCKER;
+  const nftBridgeLocker =
+    process.env.NEXT_PUBLIC_BRIDGE_SINGLE_TOKEN_LOCKER_ETHEREUM;
 
   const { runContractFunction: lockNft } = useWeb3Contract({
     abi: tokenLockerAbi,
@@ -51,7 +52,7 @@ const Home: NextPage = () => {
   const handleRunCloudFunctions = async () => {
     axios
       .get(
-        `http://localhost:5001/neoverse-classic/us-central1/neoverse/bridgeUserNft`,
+        `http://localhost:5001/neoverse-classic/us-central1/neoverse/bridgeUserNfts`,
         {
           params: {
             ethAddress: account,
